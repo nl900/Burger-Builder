@@ -1,3 +1,4 @@
+/*mobile devices*/
 .NavigationItems {
     margin: 0;
     padding: 0;
@@ -6,4 +7,11 @@
     align-items: center;
     height: 100%;
     
+}
+
+/*desktop devices*/
+@media (min-width: 500px) {
+    .NavigationItems {
+        flex-flow: row;
+    }
 }
