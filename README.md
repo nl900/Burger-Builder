@@ -1,10 +1,10 @@
 
 
 ## Burger Builder
-A React single-page app which allows the user to add ingredients to the burger. 
-The SPA has also been adjusted to fit both desktop and mobile devices.
+A React single-page app which allows the user to choose burger fillings and check it out. 
+The SPA has been adjusted to fit both desktop and mobile devices.
 
-<img src="src/assets/images/mobiledevscreen.png" width ="75" height ="100">
+<img src="src/assets/images/mobiledevscreen.png" width ="100" height ="125">
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
