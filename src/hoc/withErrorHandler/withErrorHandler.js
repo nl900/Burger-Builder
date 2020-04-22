@@ -10,14 +10,20 @@ const withErrorHandler = (WrappedComponent, axios) => {
         }
         //execute when component is created. Alternate is use constructor
         componentWillMount() {
-            axios.interceptors.request.use(req=> {
+            this.reqInterceptor = axios.interceptors.request.use(req=> {
                 this.setState({error: null});
                 return req;
             });
             //get error from firebase
-            axios.interceptors.response.use(res => res, error => {
+            this.resInterceptor = axios.interceptors.response.use(res => res, error => {
                 this.setState({error: error});
             });
+        }
+
+        //executed when a component is no longer required. prevent memory leak
+        componentWillUnmount() {
+            axios.interceptors.request.eject(this.reqInterceptor);
+            axios.interceptors.response.eject(this.resInterceptor);
         }
 
         errorConfirmedHandler = () => {
