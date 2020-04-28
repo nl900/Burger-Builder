@@ -26,7 +26,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://burger-builder-ef43f.firebaseio.com/ingredients.json')
+        axios.get('https://firebaseio.com/ingredients.json')
         .then(response => {
                 this.setState({ ingredients: response.data });
 
@@ -86,28 +86,30 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        this.setState({ loading: true });
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'A Name',
-                address: {
-                    street: 'A Street',
-                    zipCode: '4566',
-                },
-                email: 'test@test.com'
-            },
-            deliveryMethod: 'delivery'
-        }
+        // this.setState({ loading: true });
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: 'A Name',
+        //         address: {
+        //             street: 'A Street',
+        //             zipCode: '4566',
+        //         },
+        //         email: 'test@test.com'
+        //     },
+        //     deliveryMethod: 'delivery'
+        // }
 
-        axios.post('/orders.json', order)   //firebase specific
-            .then(response => {
-                this.setState({ loading: false, purchasing: false });
-            })
-            .catch(error => {
-                this.setState({ loading: false, purchasing: false });
-            });
+        // axios.post('/orders.json', order)   //firebase specific
+        //     .then(response => {
+        //         this.setState({ loading: false, purchasing: false });
+        //     })
+        //     .catch(error => {
+        //         this.setState({ loading: false, purchasing: false });
+        //     });
+
+        this.props.history.push('/checkout');
     }
 
     render() {
