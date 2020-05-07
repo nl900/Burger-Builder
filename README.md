@@ -1,7 +1,7 @@
 
 
 ## Burger Builder
-A React single-page app which allows the user to choose burger fillings and check it out. Connects to Firebase as backend.</br>
+A React single-page app which allows the user to choose burger fillings and check it out. Connects to Firebase as database.</br>
 
 The SPA has been adjusted to fit both desktop and mobile devices. 
 
